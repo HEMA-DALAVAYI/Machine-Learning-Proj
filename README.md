@@ -25,7 +25,7 @@ The dataset used in this project is the **[Arxiv Scientific Research Papers Data
 - **`id`**: Unique identifier for the paper  
 - **`title`**: Title of the research paper  
 - **`abstract`**: Abstract or summary of the paper  
-- **`categories`**: Subject categories (e.g., `cs.AI`, `cs.LG`, etc.)  
+- **`categories`**: Subject categories 
 - **`update_date`**: Last updated timestamp for the record
 - many other fields
 
@@ -41,14 +41,13 @@ These features are used to train models that automatically classify research pap
 
 ## Steps to Run Each Model
 
-## Steps to Run Each Model
-
 After downloading the dataset, follow these steps to train, evaluate, and ensemble the models.  
 **Note:** Each model script includes its own preprocessing steps, so there is no need to run a separate preprocessing script.
 
----
-
 ### 1. Train Random Forest Models
+
+
+
 ### 2. Train Logistic Regression Forest
 Ensure that the dataset file is in the **same directory** as `LogisticRegModel.py`.
 
@@ -76,6 +75,12 @@ Inside `LogisticRegModel.py`, you can modify parameters to adjust training behav
 
 Once training is complete, the script will **automatically evaluate the model**  
 and display performance metrics such as **accuracy** , **loss**  and the **confusion matrix** in the terminal.
+
+### 3. Train BILSTM Model
+
+
+
+### 3. Train Ensemble Model
 
 
 
