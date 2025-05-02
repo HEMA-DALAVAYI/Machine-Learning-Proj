@@ -46,6 +46,57 @@ After downloading the dataset, follow these steps to train, evaluate, and ensemb
 
 ### 1. Train Random Forest Models
 
+This script trains a **Random Forest classifier** for scientific paper classification based on preprocessed title and summary text using **TF-IDF vectorization**.
+
+## 📂 Dataset Preparation
+
+Ensure your dataset CSV file (e.g., `dataset.csv`) is placed in the same directory as `RandomForestModel.py`.
+
+The CSV should have the following columns:
+- `title`: Title of the paper
+- `summary`: Abstract of the paper
+- `category`: Ground-truth label
+
+## ⚙️ Update the Dataset Path
+
+Inside `RandomForestModel.py`, update this line if needed:
+
+```python
+X_raw, y = load_and_process_dataset('./dataset.csv')  # <-- Replace with your file path if different
+```
+
+## 🚀 Run the Script
+
+Open your terminal, navigate to the project directory, and run:
+
+```bash
+python RandomForestModel.py
+```
+
+## 🔧 Optional Configuration
+
+To change TF-IDF features, edit this line:
+
+```python
+X, vectorizer = tfidf_vectorize(X_raw, max_features=5000)  # You can adjust max_features
+```
+
+To tune Random Forest parameters, update the `random_forest()` function:
+
+```python
+RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+```
+
+## 📊 Output
+
+After training, the script will automatically evaluate the model and display:
+
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1 Score**
+
+These metrics reflect the model’s performance in classifying papers into the correct category.
 
 
 ### 2. Train Logistic Regression Forest
