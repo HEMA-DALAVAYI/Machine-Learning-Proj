@@ -105,7 +105,7 @@ def main():
         project_name='arxiv_rnn'
     )
 
-    tuner.search(X_train, y_train, epochs=5, validation_split=0.2, batch_size=64,
+    tuner.search(X_train, y_train, epochs=20, validation_split=0.2, batch_size=64,
                  callbacks=[EarlyStopping(patience=2)])
 
     best_model = tuner.get_best_models(num_models=1)[0]
