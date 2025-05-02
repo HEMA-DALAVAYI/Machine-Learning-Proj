@@ -80,7 +80,7 @@ and display performance metrics such as **accuracy** , **loss**  and the **confu
 
 
 
-### 3. Train Ensemble Model
+### 4. Train Ensemble Model
 
 
 
