@@ -13,6 +13,7 @@ This project explores machine learning techniques to automatically classify rese
   - `seaborn`
   - `nltk`
   - `tensorflow`
+  - `keras-tuner`
 
 If any of the libraries are not pre-installed, install them using the command `pip install <libraryName>`
 
@@ -127,11 +128,53 @@ Inside `LogisticRegModel.py`, you can modify parameters to adjust training behav
 Once training is complete, the script will **automatically evaluate the model**  
 and display performance metrics such as **accuracy** , **loss**  and the **confusion matrix** in the terminal.
 
-### 3. Train BILSTM Model
+### 3. SimpleRNN
 
+Trains a Simple RNN model.
 
+```bash
+python simple_rnn.py
+```
 
-### 4. Train Ensemble Model
+### 3. BiLSTM
+
+Trains a Bidirectional LSTM model.
+
+```bash
+python BiLSTMModel.py
+```
+
+BiLSTM uses NLTK for preprocessing and TensorFlow/Keras for modeling. Tune:
+- `MAX_LEN`, `EMBEDDING_DIM`
+- `dropout`, `num_units`, etc.
+
+### 4. Ensemble (LogReg + BiLSTM)
+
+Combines Logistic Regression and BiLSTM using soft or hard voting.
+
+```bash
+python EnsembleModel.py
+```
+
+Soft Voting:
+```python
+ensemble_predict_soft(log_model, bilstm_model, tokenizer, X_text, X_df)
+```
+
+Hard Voting:
+```python
+ensemble_predict_hard(log_model, bilstm_model, tokenizer, X_text, X_df, threshold=0.4)
+```
+
+## Output for SimpleRNN, BiLSTM, and Ensemble Model
+
+Each script will report:
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+These metrics evaluate how well the model classifies research paper categories.
 
 
 
